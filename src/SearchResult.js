@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { Icon, Card, Modal, Button } from "antd";
 import axios from "axios";
 
-const BASE_URL =
-  "http://ec2-13-126-103-204.ap-south-1.compute.amazonaws.com:5000";
+const BASE_URL = "https://musicrec-server-cl.herokuapp.com";
 
 class SearchResult extends Component {
   constructor() {

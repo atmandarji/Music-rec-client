@@ -4,8 +4,7 @@ import axios from "axios";
 
 const Search = Input.Search;
 
-const BASE_URL =
-  "http://ec2-13-126-103-204.ap-south-1.compute.amazonaws.com:5000";
+const BASE_URL = "https://musicrec-server-cl.herokuapp.com";
 
 class ArtistSearch extends Component {
   onSearch = value => {

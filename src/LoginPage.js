@@ -9,8 +9,7 @@ const API = {
   signup: "signup"
 };
 
-const BASE_URL =
-  "http://ec2-13-126-103-204.ap-south-1.compute.amazonaws.com:5000";
+const BASE_URL = "https://musicrec-server-cl.herokuapp.com";
 
 class LoginPage extends Component {
   constructor() {
@@ -68,8 +67,9 @@ class LoginPage extends Component {
         this.setState({ isLoading: false });
         this.props.history.push("/dashboard");
       })
-      .catch(({ response: { data } }) => {
-        this.setState({ error: data.message, isLoading: false });
+      .catch(err => {
+        console.log(err);
+        this.setState({ isLoading: false });
       });
   };
 
@@ -102,7 +102,6 @@ class LoginPage extends Component {
         />
         {this.state.signup ? (
           <Input
-            type="password"
             placeholder="Full name"
             name="username"
             className="input_wrapper"
