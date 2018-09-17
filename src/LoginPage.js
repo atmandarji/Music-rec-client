@@ -67,9 +67,8 @@ class LoginPage extends Component {
         this.setState({ isLoading: false });
         this.props.history.push("/dashboard");
       })
-      .catch(err => {
-        console.log(err);
-        this.setState({ isLoading: false });
+      .catch(({ response: { data } }) => {
+        this.setState({ error: data.message, isLoading: false });
       });
   };
 
